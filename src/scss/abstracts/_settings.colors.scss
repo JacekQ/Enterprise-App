@@ -1,0 +1,49 @@
+// colors - from http://chir.ag/projects/name-that-color/
+$black: #000;
+$bombay: #aaaaa6;
+$deep-sea: #008464;
+$dovegray:#666666;
+$deyork: #7ac488;
+$froly:#f57584;
+$havelockblue:#4A90E2;
+$radicalred: #fc3564;
+$silver: #cccccc;
+$silverchalice: #9f9f9f;
+$transparent: transparent;
+$treepoppy: #fc9c1d;
+$white: #fff;
+$whitesmoke: #eeeeee;
+$havelockblue:#4A90E2;
+$lima:#33d321;
+
+// backgrounds
+$c-bg: $white;
+$c-grey-light: #fafafa;
+$c-grey-light-1: #f7f7f7;
+$c-grey-dark: #eee;
+
+
+// fonts
+$c-font: $black;
+$c-font-gray:$dovegray;
+
+// borders
+$c-border-input: $silverchalice;
+$c-border-table:$dovegray;
+
+// form
+$c-form-submit-button: $white;
+$c-form-submit-button-bg: $dovegray;
+// validation
+$c-validation-error: $bombay;
+$c-validation-error-bg: $transparent;
+$c-validation-border: $bombay;
+// info modal
+$c-info-success: $deyork;
+$c-info-error: $froly;
+$c-info-warning: $treepoppy;
+// btns
+$c-link-btn-color: $havelockblue;
+$c-dark-btn-color:$dovegray;
+// icons
+$c-icon-color:$dovegray;

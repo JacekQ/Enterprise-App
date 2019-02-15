@@ -1,0 +1,16 @@
+app-invoice-list,
+app-to-pay-list,
+app-payment-list {
+    display: block;
+}
+
+@media only screen and (min-width: 600px) {
+
+    app-invoices .mat-tab-links,
+    app-invoice-list,
+    app-to-pay-list,
+    app-payment-list {
+        margin: 0 85px;
+    }
+
+}

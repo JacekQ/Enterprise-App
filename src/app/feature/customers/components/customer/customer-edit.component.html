@@ -1,0 +1,56 @@
+<app-spinner *ngIf="isLoading$ | async"></app-spinner>
+
+<div *ngIf="!(isLoading$ | async)" class="container">
+    <mat-card class="customer-card">
+      <mat-card-title *ngIf="entity.id !== 0">{{ 'customers.customer.edit' | translate:{ value: entity.id } }}</mat-card-title>
+      <mat-card-title *ngIf="entity.id === 0">{{ 'customers.customer.new' | translate }}</mat-card-title>
+      <mat-card-content>
+
+        <form novalidate (ngSubmit)="onSubmit(customerForm)" [formGroup]="customerForm" class="customer-form">
+            <mat-form-field class="customer-form__field">
+              <input matInput
+                [placeholder]="'customers.customers.col_label_company_name' | translate"
+                formControlName="companyName" required>
+            </mat-form-field>
+            <mat-form-field class="customer-form__field customer-form__field--middle">
+              <input matInput
+                [placeholder]="'customers.customers.col_label_address' | translate"
+                formControlName="address" required>
+            </mat-form-field>
+            <mat-form-field class="customer-form__field customer-form__field--middle">
+              <input matInput
+                [placeholder]="'customers.customers.col_label_city' | translate"
+                formControlName="city" required>
+            </mat-form-field>
+            <mat-form-field class="customer-form__field customer-form__field--short">
+              <mat-select [placeholder]="'customers.customers.col_label_country' | translate" formControlName="country" required>
+                <mat-option *ngFor="let c of countries" [value]="c">
+                    {{ c }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="customer-form__field">
+              <input matInput
+                [placeholder]="'customers.customers.col_label_email' | translate"
+                formControlName="email" required>
+            </mat-form-field>
+            <mat-form-field class="customer-form__field customer-form__field--short">
+              <input matInput
+                [placeholder]="'customers.customers.col_label_phone' | translate"
+                formControlName="phone" required>
+            </mat-form-field>
+            <mat-form-field class="customer-form__field customer-form__field--middle">
+              <input matInput
+                [matDatepicker]="myDatepicker"
+                [placeholder]="'customers.customers.col_label_createdAt' | translate"
+                formControlName="createdAt">
+              <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #myDatepicker></mat-datepicker>
+            </mat-form-field>
+            <button mat-button type="submit" class="btn">Zapisz</button>
+        </form>
+
+      </mat-card-content>
+      <mat-card-actions></mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,23 @@
+.container {
+  margin: 2rem auto;
+  width: 40rem;
+}
+
+.customer-card {
+  padding: 2rem;
+}
+
+.customer-form {
+
+  &__field {
+    display: block;
+
+    &--middle {
+      width: 20rem;
+    }
+
+    &--short {
+      width: 10rem;
+    }
+  }
+}

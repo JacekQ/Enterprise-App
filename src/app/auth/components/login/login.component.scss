@@ -1,0 +1,29 @@
+
+@import '../../../../scss/abstracts/settings.colors';
+
+.container {
+  margin: 2rem auto;
+  width: 40rem;
+}
+
+.login-card {
+  padding: 2rem;
+  background-color: $c-grey-light;
+}
+
+.login-form {
+
+  &__field {
+    display: block;
+    margin-bottom: 2rem;
+  }
+}
+
+.alert {
+  display: block;
+  padding: 0 0 2rem;
+
+  &-danger {
+    color: $c-info-error;
+  }
+}

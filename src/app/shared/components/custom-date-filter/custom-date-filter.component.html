@@ -1,0 +1,52 @@
+<form [formGroup]="form" class="row" [@fadeInContent]="'enter'">
+  
+  <div class="date-from col-sm-12 col-md-4 row no-gutters" [ngClass]="{ 'time-from': pickerType === 'date-time' }">
+    
+    <mat-form-field class="date-field" 
+      [ngClass]="{'col-sm-12': pickerType !== 'date-time', 'col-sm-6': pickerType === 'date-time' }">
+      <input matInput [matDatepicker]="fromPicker" 
+        [max]="fromDateMax"
+        [placeholder]="'shared.custom_date_filter.date_from_placeholder' | translate"
+        formControlName="fromDate"
+        readonly>
+      <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+      <mat-datepicker #fromPicker [touchUi]="mode === 'mobile'"></mat-datepicker>
+    </mat-form-field>
+
+    <div class="time-field-wrapper col-sm-6">
+      <mat-form-field class="time-field" *ngIf="pickerType === 'date-time'">
+        <mat-select formControlName="fromTime">
+          <mat-option *ngFor="let time of fromTimeSelectOptions" [value]="time.value" [disabled]="time.disabled">{{ time.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="date-to col-sm-12 col-md-4 row no-gutters" [ngClass]="{ 'time-to': pickerType === 'date-time' }">
+    
+    <mat-form-field class="date-field" 
+      [ngClass]="{'col-sm-12': pickerType !== 'date-time', 'col-sm-6': pickerType === 'date-time' }">
+      <input matInput [matDatepicker]="toPicker" 
+        [min]="toDateMin"
+        [placeholder]="'shared.custom_date_filter.date_to_placeholder' | translate"
+        formControlName="toDate"
+        readonly>
+      <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+      <mat-datepicker #toPicker [touchUi]="mode === 'mobile'"></mat-datepicker>
+    </mat-form-field>
+    
+    <div class="time-field-wrapper col-sm-6">
+      <mat-form-field class="time-field" *ngIf="pickerType === 'date-time'">
+        <mat-select formControlName="toTime">
+          <mat-option *ngFor="let time of toTimeSelectOptions" [value]="time.value" [disabled]="time.disabled">{{ time.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-4">
+    <button mat-button class="button-apply" *ngIf="mode === 'desktop'"
+      [disabled]="form.invalid" (click)="onApplyClick()">{{ 'shared.custom_date_filter.button_apply' | translate }}</button>
+  </div>
+</form>

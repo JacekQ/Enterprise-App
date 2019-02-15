@@ -1,0 +1,46 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
+
+<h1 mat-dialog-title>Dane firmy</h1>
+
+<div mat-dialog-content class="customer-details u-margin-bottom-small">
+  <ul class="customer-details__list">
+    <li class="customer-details__item">
+      <span class="customer-details__label">{{ 'customers.customers.col_label_id' | translate }}</span> {{ data.id }}
+    </li>
+    <li class="customer-details__item">
+      <span class="customer-details__label">{{ 'customers.customers.col_label_company_name' | translate }}</span> {{data.companyName}}
+    </li>
+    <li class="customer-details__item">
+      <span class="customer-details__label">{{ 'customers.customers.col_label_address' | translate }}</span> {{data.address}}
+    </li>
+    <li class="customer-details__item">
+      <span class="customer-details__label">{{ 'customers.customers.col_label_city' | translate }}</span> {{ data.city }}
+    </li>
+    <li class="customer-details__item">
+      <span class="customer-details__label">{{ 'customers.customers.col_label_country' | translate }}</span> {{data.country}}
+    </li>
+    <li class="customer-details__item">
+      <span class="customer-details__label">{{ 'customers.customers.col_label_email' | translate }}</span> {{data.email}}
+    </li>
+    <li class="customer-details__item">
+      <span class="customer-details__label">{{ 'customers.customers.col_label_phone' | translate }}</span> {{data.phone}}
+    </li>
+    <li class="customer-details__item">
+      <span class="customer-details__label">{{ 'customers.customers.col_label_createdAt' | translate }}</span> {{data.createdAt}}
+    </li>
+  </ul>
+</div>
+
+<div class="customer-details__contacts" *ngIf="contacts.length > 0">
+  Lista kontaktów
+  <ul class="customer-details__list">
+    <li class="customer-details__item" *ngFor="let c of contacts">
+      <span class="customer-details__label customer-details__label--list">{{c.title}}</span> {{c.lastName}} {{c.firstName}}
+      <mat-icon class="icon">phone</mat-icon> {{c.phone}}
+    </li>
+  </ul>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="mobile-filters">
+    <div class="filters-header d-flex justify-content-start align-items-center">
+        <mat-icon (click)="onClose()"
+            class="header-icon">close</mat-icon>
+        <span class="header-title"
+            translate="shared.filters.mobile_filters_title"></span>
+    </div>
+    <div class="filters-content">
+        <ng-content></ng-content>
+        <button mat-button
+            class="submit-btn"
+            (click)="onSubmit()"
+            [disabled]="formInvalid">{{ 'shared.filters.submit_btn' | translate }}</button>
+    </div>
+</div>

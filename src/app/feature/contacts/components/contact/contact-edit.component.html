@@ -1,0 +1,48 @@
+<app-spinner *ngIf="isLoading$ | async"></app-spinner>
+
+<div *ngIf="!(isLoading$ | async)" class="container">
+  <mat-card class="contact-card">
+    <mat-card-title *ngIf="entity.id !== 0">{{ 'contacts.contact.edit' | translate:{ value: entity.id } }}</mat-card-title>
+    <mat-card-title *ngIf="entity.id === 0">{{ 'contacts.contact.new' | translate }}</mat-card-title>
+    <mat-card-content>
+
+      <form novalidate (ngSubmit)="onSubmit(contactForm)" [formGroup]="contactForm" class="contact-form">
+          <mat-form-field class="contact-form__field">
+            <input matInput
+              [placeholder]="'contacts.contacts.col_label_title' | translate"
+              formControlName="title" required>
+          </mat-form-field>
+          <mat-form-field class="contact-form__field contact-form__field--middle">
+            <input matInput
+              [placeholder]="'contacts.contacts.col_label_firstName' | translate"
+              formControlName="firstName" required>
+          </mat-form-field>
+          <mat-form-field class="contact-form__field contact-form__field--middle">
+            <input matInput
+              [placeholder]="'contacts.contacts.col_label_lastName' | translate"
+              formControlName="lastName" required>
+          </mat-form-field>
+          <mat-form-field class="contact-form__field">
+            <input matInput
+              [placeholder]="'contacts.contacts.col_label_email' | translate"
+              formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field class="contact-form__field contact-form__field--short">
+            <input matInput
+              [placeholder]="'contacts.contacts.col_label_phone' | translate"
+              formControlName="phone" required>
+          </mat-form-field>
+          <mat-form-field class="contact-form__field">
+            <mat-select [placeholder]="'contacts.contacts.col_label_companyId' | translate" formControlName="companyId" required>
+              <mat-option *ngFor="let c of companies" [value]="c.value">
+                {{ c.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button type="submit" class="btn">Zapisz</button>
+      </form>
+
+    </mat-card-content>
+    <mat-card-actions></mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,26 @@
+<form [formGroup]="form.get('filters')" class="row">
+  <mat-form-field class="col-sm-12 col-md-4 col-lg-3">
+    <input matInput
+      [placeholder]="'customers.customers.filters.search.placeholder' | translate"
+      formControlName="search">
+  </mat-form-field>
+
+  <mat-form-field class="col-sm-12 col-md-4 col-lg-3">
+      <mat-select [placeholder]="'customers.customers.filters.country.placeholder' | translate"
+        formControlName="country" multiple>
+        <mat-option *ngFor="let opt of filterOptions.country"
+          [value]="opt.value">{{ opt.label | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  <mat-form-field class="col-sm-12 col-md-4 col-lg-3">
+    <mat-select [formControl]="form.get('dateFilter')"
+      [placeholder]="'customers.customers.filters.createdAt.placeholder' | translate">
+      <mat-option *ngFor="let opt of filterOptions.created"
+          [value]="opt.value">{{ 'customers.customers.filters.createdAt.' + opt.label | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-custom-date-filter class="col-sm-12" *ngIf="showCustomDateFilter" [mode]="mode" [filterForm]="form.get('dates')"
+    (applyFilter)="onFilterApply($event)"></app-custom-date-filter>
+</form>

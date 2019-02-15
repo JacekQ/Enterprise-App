@@ -1,0 +1,10 @@
+<div class="confirm-modal">
+    <div class="confirm-modal-title">{{data?.modalTitle}}</div>
+    <div class="confirm-modal-content">{{data?.modalContent}}</div>
+    <div class="confirm-modal-action">
+        <button class="btn btn-link action-btn btn-uppercase"
+            mat-dialog-close>{{data?.discardBtn}}</button>
+        <button class="btn btn-link action-btn btn-uppercase"
+            [mat-dialog-close]="true">{{data?.confirmBtn}}</button>
+    </div>
+</div>

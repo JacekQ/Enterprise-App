@@ -1,0 +1,15 @@
+<form [formGroup]="form.get('filters')" class="row">
+  <mat-form-field class="col-sm-12 col-md-4 col-lg-3">
+    <input matInput
+      [placeholder]="'contacts.contacts.filters.search.placeholder' | translate"
+      formControlName="search">
+  </mat-form-field>
+
+  <mat-form-field class="col-sm-12 col-md-4 col-lg-3">
+      <mat-select [placeholder]="'contacts.contacts.filters.company.placeholder' | translate"
+        formControlName="company">
+        <mat-option *ngFor="let opt of filterOptions.company"
+          [value]="opt.value">{{ opt.label | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+</form>

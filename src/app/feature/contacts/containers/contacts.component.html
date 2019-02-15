@@ -1,0 +1,17 @@
+<nav mat-tab-nav-bar mat-stretch-tabs>
+  <a mat-tab-link
+    routerLink="list"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    {{ 'contacts.contacts.tab_label' | translate }}
+  </a>
+  <a mat-tab-link
+    *ngIf="isAdmin$ | async"
+    routerLink="new"
+    routerLinkActive #rla2="routerLinkActive"
+    [active]="rla2.isActive">
+    {{ 'contacts.contacts.tab_label2' | translate }}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

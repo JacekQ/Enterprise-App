@@ -1,0 +1,94 @@
+<table mat-table [dataSource]="dataSource" matSort [ngClass]="{ 'hide-header' : isMobile }" class="data-table">
+
+  <!--- Note that these columns can be defined in any order.
+      The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <!-- id -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false"> {{ 'contacts.contacts.col_label_id' | translate }} </th>
+    <td mat-cell *matCellDef="let row">
+      {{row.id}} &nbsp;
+      <mat-icon class="icon-preview" routerLink="/contacts/edit/{{ row.id }}" title="Edytuj">edit</mat-icon> &nbsp;
+      <span *ngIf="isAdmin$ | async"> &nbsp;
+        <mat-icon class="icon-preview" (click)="openDeleteModal(row)" title="Edytuj">delete</mat-icon> &nbsp;
+      </span>
+    </td>
+  </ng-container>
+
+  <!-- title -->
+  <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false"> {{ 'contacts.contacts.col_label_title' | translate }} </th>
+      <td mat-cell *matCellDef="let row"> {{ row.title }} </td>
+    </ng-container>
+
+  <!-- firstName -->
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false"> {{ 'contacts.contacts.col_label_firstName' | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{ row.firstName }} </td>
+  </ng-container>
+
+  <!-- lastName -->
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false"> {{ 'contacts.contacts.col_label_lastName' | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{ row.lastName }} </td>
+  </ng-container>
+
+  <!-- email -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false"> {{ 'contacts.contacts.col_label_email' | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{ row.email}} </td>
+  </ng-container>
+
+  <!-- phone -->
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear="false"> {{ 'contacts.contacts.col_label_phone' | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{ row.phone }} </td>
+  </ng-container>
+
+  <!-- companyId -->
+  <ng-container matColumnDef="companyId">
+    <th mat-header-cell *matHeaderCellDef> {{ 'contacts.contacts.col_label_companyId' | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{ custonersData[row.companyId] || '' }} </td>
+  </ng-container>
+
+  <!-- compactView Column -->
+  <ng-container matColumnDef="compactView">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let row">
+        <div class="d-flex flex-column mobile-column">
+            {{row.id}} &nbsp;
+            <mat-icon class="icon-preview" routerLink="/contacts/edit/{{ row.id }}" title="Edytuj">edit</mat-icon> &nbsp;
+            {{ row.title }}
+            <div class="info d-flex align-items-center">
+            </div>
+            <div class="info d-flex align-items-center">
+                {{ row.firstName}} {{ row.lastName }}
+            </div>
+            <div class="info d-flex align-items-center">
+              <span class="data-table__contact"><mat-icon class="icon-cv">phone</mat-icon> {{ row.phone }} <mat-icon class="icon-cv">email</mat-icon> {{ row.email }}</span><br>
+              <span class="data-table__contact">{{ custonersData[row.companyId] || '' }}</span>
+            </div>
+        </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+    [ngClass]="{ 'selected': selection.isSelected(row)}"></tr>
+</table>

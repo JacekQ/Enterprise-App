@@ -1,0 +1,19 @@
+<div class="page-wrap container">
+  <div class="row no-gutters">
+    <nav class="navbar">
+      <a routerLink="/"
+        class="navbar-brand">
+        <img src="../../../assets/images/logo.png"
+            class="logo"
+            alt="company logo">
+      </a>
+      <app-language-switch type='list'></app-language-switch>
+    </nav>
+  </div>
+
+  <main class="content row no-gutters">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+</div>

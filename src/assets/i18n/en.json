@@ -1,0 +1,262 @@
+{
+    "common": {
+        "language": "Language",
+        "langs": {
+            "en": "English",
+            "pl": "Polski"
+        },
+        "paginator": {
+            "items_per_page": "Items per page",
+            "first_page": "First page",
+            "last_page": "Last page",
+            "next_page": "Next page",
+            "of_label": "from",
+            "previous_page": "Previous page"
+        },
+		"not_found": {
+			"info": "Hey! It looks like this page doesn't exist yet.",
+			"home_button": "Take Me Home"
+		}
+    },
+    "customers": {
+        "customer": {
+            "details_tab_label": "Details",
+            "edit": "Edit customer: {{value}}",
+            "new": "New customer"
+        },
+        "customers": {
+            "tab_label": "Customers list",
+            "tab_label2": "New customer",
+            "col_label_address": "Address",
+            "col_label_city": "City",
+            "col_label_company_name": "Company name",
+            "col_label_email": "Email",
+            "col_label_phone": "Phone",
+            "col_label_id": "Customer Id",
+            "col_label_country": "Country",
+            "col_label_createdAt": "Creation date",
+            "empty_data_info": "No items meeting the criteria",
+            "filters": {
+              "createdAt": {
+                "ALL": "All",
+                "CUSTOM": "Date range...",
+                "MONTH": "Last month",
+                "placeholder": "Created at",
+                "QUARTER": "Last quarter",
+                "YEAR": "Last year"
+              },
+              "search": {
+                "placeholder": "Search"
+              },
+              "country": {
+                "ALL": "All",
+                "placeholder": "Country"
+              },
+              "sort_types": {
+                "id": "Id",
+                "companyName": "Company name",
+                "address": "Address",
+                "city": "City",
+                "country": "Country",
+                "email": "Email",
+                "phone": "Phone"
+              }
+            },
+            "customers_count": "Customers: {{value}}",
+            "delete_customer_modal": {
+              "confirm_btn": "Ok",
+              "discard_btn": "Cancel",
+              "modal_title": "Delete customer's data: {{customer}}",
+              "modal_content": "Are you sure you want to delete customer?"
+            }
+          }
+	},
+    "contacts": {
+        "contact": {
+            "details_tab_label": "Details",
+            "edit": "Edit contact: {{value}}",
+            "new": "New contact"
+        },
+        "contacts": {
+            "tab_label": "contacts list",
+            "tab_label2": "New contact",
+            "col_label_lastName": "Last name",
+            "col_label_firstName": "First name",
+            "col_label_email": "Email",
+            "col_label_phone": "Phone",
+            "col_label_id": "Contact id",
+            "col_label_title": "Position",
+            "col_label_companyId": "Company name",
+            "empty_data_info": "No items meeting the criteria",
+            "filters": {
+              "search": {
+                "placeholder": "Search"
+              },
+              "company": {
+                "ALL": "All",
+                "placeholder": "Customer"
+              },
+              "sort_types": {
+                "id": "Id",
+                "firstName": "First name",
+                "lastName": "Last name",
+                "email": "Email",
+                "phone": "Phone",
+                "title": "Position"
+              }
+            },
+            "contacts_count": "contacts: {{value}}",
+            "delete_contact_modal": {
+              "confirm_btn": "Ok",
+              "discard_btn": "Cancel",
+              "modal_title": "Delete contact's data: {{contact}}",
+              "modal_content": "Are you sure you want to delete contact?"
+            }
+          }
+	},
+    "users": {
+        "user": {
+            "details_tab_label": "Details",
+            "edit": "Edit user: {{value}}",
+            "new": "New user"
+        },
+        "users": {
+            "tab_label": "Users list",
+            "tab_label2": "New user",
+            "col_label_id": "User id",
+            "col_label_lastName": "Last name",
+            "col_label_firstName": "First name",
+            "col_label_email": "Email",
+            "col_label_image": "Image",
+            "col_label_role": "Credentials",
+            "empty_data_info": "No items meeting the criteria",
+            "filters": {
+              "search": {
+                "placeholder": "Search"
+              },
+              "company": {
+                "ALL": "All",
+                "placeholder": "Customer"
+              },
+              "sort_types": {
+                "id": "Id",
+                "firstName": "First name",
+                "lastName": "Last name",
+                "email": "Email",
+                "phone": "Phone",
+                "title": "Position"
+              }
+            },
+            "users_count": "Users: {{value}}",
+            "delete_user_modal": {
+              "confirm_btn": "Ok",
+              "discard_btn": "Cancel",
+              "modal_title": "Delete user's data: {{user}}",
+              "modal_content": "Are you sure you want to delete user?"
+            }
+          }
+	},
+    "profile": {
+        "change_password": {
+            "tab_label": "CHANGE PASSWORD",
+            "title": "Change password",
+            "old_password": "Old password",
+            "new_password": "New password",
+            "new_password_rules": "The new password doesn't meet the security policy.",
+            "new_password_rules_help": "Rules:<br>- Minimal length has to be at least 8 characters.<br>- It has to contain 3 out of these 5 groups of characters: upper-case letters, lower-case letters, digits, special characters, other unicode characters.<br>- The password cannot contain the user name.",
+            "confirm_password": "Repeat password",
+            "password_error": "Enter password",
+            "change_fail": "Password change has failed.",
+            "submit": "Save",
+            "goto_profile": "Go back to profile",
+            "PASSWORDS_NOT_EQUAL": "The repeated password is different from the new password.",
+            "INVALID_CURRENT_PASSWORD": "Old password is invalid.",
+            "SAME_PASSWORD_AS_CURRENT": "Old and new password should be different.",
+            "TOO_SHORT": "New password is too short.",
+            "PASSWORD_CONTAINS_USERNAME": "Password contains user name.",
+            "PASSWORD_TOO_WEAK": "Password is too simple.",
+            "ILLEGAL_CHARACTER": "Password contains forbidden character.",
+            "PASSWORD_CHANGED_OK": "Password has been changed.",
+            "MISSING_VALUE": "Sent data are incomplete."
+        }
+    },
+    "reset-password": {
+        "title": "Set new password",
+        "new_password": "New password",
+        "confirm_password": "Confirm password",
+        "password-required": "Password required",
+        "new_password-rules": "The new password doesn't meet the security policy.",
+        "new_password-hint": "Rules:<br>- Minimal length has to be at least 8 characters.<br>- It has to contain 3 out of these 5 groups of characters: upper-case letters, lower-case letters, digits, special characters, other unicode characters.<br>- The password cannot contain the user name.",
+        "passwords_not_equal": "The repeated password is different from the new password.",
+        "save-new-password-btn": "Save new password",
+        "go-to-login-btn": "GoTo login page",
+        "completed": "Password change completed"
+    },
+    "invalid-token": {
+        "title": "The link to set the password is expired",
+        "content": "A too long period of time has passed since the link was generated to set a new password.<br> Please go to the login page to generate a new link.",
+        "go-to-login-btn": "Go to the login page"
+    },
+    "password-errors": {
+        "PASSWORDS_NOT_EQUAL": "The repeated password is different from the new password.",
+        "INVALID_CURRENT_PASSWORD": "Old password is invalid.",
+        "SAME_PASSWORD_AS_CURRENT": "Old and new password should be different.",
+        "TOO_SHORT": "New password is too short.",
+        "PASSWORD_CONTAINS_USERNAME": "Password contains user name.",
+        "PASSWORD_TOO_WEAK": "Password is too simple.",
+        "ILLEGAL_CHARACTER": "Password contains forbidden character.",
+        "PASSWORD_CHANGED_OK": "Password has been changed.",
+        "MISSING_VALUE": "Sent data are incomplete.",
+        "NO_SUCH_TOKEN": "Invalid token"
+    },
+    "login": {
+        "title": "Login to client's portal",
+        "username": "Login",
+        "username-hint": "Enter valid email.",
+        "username-error-empty": "Missing email.",
+        "username-error-invalid": "Invalid email.",
+        "password": "Your password",
+        "password-hint": "Enter password.",
+        "password-error": "Missing password.",
+        "submit": "Login",
+        "login_success": "Login successful.",
+        "login_fail": "The user does not exist or the password you provided is incorrect."
+    },
+    "menu": {
+        "customers": "Customers",
+        "contacts": "Contacts",
+        "dashboard": "Dashboard",
+        "empty": "Customer portal",
+        "invoices_and_payments": "Invoices and Payments",
+        "logout": "Logout",
+        "profile": "User Profile",
+        "users": "Users"
+    },
+    "shared": {
+        "custom_date_filter": {
+            "button_apply": "Apply",
+            "date_from_placeholder": "Date from",
+            "date_to_placeholder": "Date to"
+        },
+        "filters": {
+            "mobile_filters_title": "Filters",
+            "submit_btn": "Submit"
+        },
+        "sorting": {
+            "mobile_sort_title": "Sorting",
+            "sort_direction_placeholder": "Order",
+            "sort_directions": {
+                "asc": "Ascending",
+                "desc": "Descending"
+            },
+            "sort_option_placeholder": "Field",
+            "submit_btn": "Submit"
+        }
+    },
+    "toolbar": {
+        "buttons": {
+            "profile_aria_label": "Button to open user profile",
+            "profile_tooltip_text": "User profile"
+        }
+    }
+}

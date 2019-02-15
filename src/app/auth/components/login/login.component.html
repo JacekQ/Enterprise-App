@@ -1,0 +1,25 @@
+<app-spinner *ngIf="isLoading$ | async"></app-spinner>
+
+<div *ngIf="!isLoading" class="container">
+  <mat-card class="login-card">
+    <mat-card-title>{{ 'login.title' | translate }}</mat-card-title>
+    <mat-card-content>
+        <form novalidate (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login-form">
+          <mat-form-field class="login-form__field">
+            <input matInput (ngModelChange)="onChange()"
+              [placeholder]="'login.username' | translate"
+              formControlName="username" required>
+          </mat-form-field>
+          <mat-form-field class="login-form__field">
+            <input matInput  type="password" (ngModelChange)="onChange()"
+              [placeholder]="'login.password' | translate"
+              formControlName="password" required>
+          </mat-form-field>
+          <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+          <div class="form-group">
+            <button [disabled]="isLoading$ | async" class="btn btn-primary">Login</button>
+          </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

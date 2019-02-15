@@ -1,0 +1,15 @@
+@import "../../../../../scss/abstracts/settings.colors";
+
+mat-form-field {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    color: $c-font-gray;
+
+    &::ng-deep .mat-select-value-text {
+        color: $c-font-gray;
+    }
+}

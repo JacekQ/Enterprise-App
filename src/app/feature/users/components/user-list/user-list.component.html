@@ -1,0 +1,56 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
+
+<div *ngIf="!isMobile" class="invoices-filters">
+  <app-user-list-filters [form]="filtersForm" [filterOptions]="filterOptions"></app-user-list-filters>
+</div>
+
+<div class="users-table" [ngClass]="{ 'empty-data': dataLength === 0}">
+    <div *ngIf="!isMobile" class="table-header">
+      <p class="users-count">{{ 'users.users.users_count' | translate: { value: dataLength || 0 } }}</p>
+    </div>
+
+    <div *ngIf="isMobile" class="table-mobile-header d-flex justify-content-between">
+      <p class="users-count">
+        {{ 'users.users.users_count' | translate:{ value: dataLength || 0 } }}
+      </p>
+      <div class="filter-icons d-flex align-items-center">
+
+        <mat-icon matBadge=""
+          matBadgePosition="above after"
+          matBadgeColor="warn"
+          matBadgeSize="small"
+          [matBadgeHidden]="!sort.active"
+          class="header-icon"
+          (click)="openSortModal()">arrow_downward</mat-icon>
+
+        <mat-icon [matBadge]="getFiltersActiveLength()"
+          matBadgePosition="above after"
+          matBadgeColor="warn"
+          matBadgeSize="small"
+          [matBadgeHidden]="getFiltersActiveLength() === 0"
+          class="header-icon"
+          (click)="openFiltersModal()">filter_list</mat-icon>
+
+      </div>
+    </div>
+
+    <div class="empty-data-info" *ngIf="dataLength === 0">
+      <p>{{ 'users.users.empty_data_info' | translate }}</p>
+    </div>
+
+  <app-user-list-table #tableCU
+    (Deleted)="lengthChanged($event)"
+    [dataSource]="dataSource"
+    [selection]="selection"
+    [isMobile]="isMobile"
+    [displayedColumns]="displayedColumns"
+    (sortChanged)="onTableSortChange($event)">
+  </app-user-list-table>
+
+  <mat-paginator #paginator
+    [length]="dataLength"
+    [pageSize]="20"
+    [pageIndex]="0"
+    [pageSizeOptions]="[10, 20, 30, 50]">
+  </mat-paginator>
+</div>

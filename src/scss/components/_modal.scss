@@ -1,0 +1,15 @@
+// @import "~bootstrap/scss/functions";
+// @import "~bootstrap/scss/variables";
+// @import "~bootstrap/scss/mixins/breakpoints";
+.custom-modalbox {
+  mat-dialog-container {
+    padding: 0;
+  }
+}
+
+.confirm-modalbox {
+  min-width: 55%;
+  // @include media-breakpoint-up(lg) {
+  //   min-width: 45%;
+  // }
+}

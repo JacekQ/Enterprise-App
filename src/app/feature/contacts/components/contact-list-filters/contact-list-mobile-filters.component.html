@@ -1,0 +1,7 @@
+<app-mobile-filter (submit)="onSubmitFilters()"
+    (close)="dialogRef.close()"
+    [formInvalid]="data?.filtersForm.invalid">
+    <app-contact-list-filters [form]="data.filtersForm"
+        [filterOptions]="data.filterOptions"
+        mode="mobile"></app-contact-list-filters>
+</app-mobile-filter>

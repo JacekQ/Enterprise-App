@@ -1,0 +1,37 @@
+@import '../../../scss/abstracts/settings.colors';
+
+mat-sidenav {
+  width: 300px;
+}
+
+.sidenav-close-btn>.mat-icon-button {
+  margin-left: auto;
+  display: block;
+}
+
+.remaining-space {
+  flex: 1 1 auto;
+}
+
+app-footer {
+  background-color: $c-grey-dark;
+  padding: 1.5rem 2rem;
+}
+
+.profile {
+
+  &__img {
+    border-radius: 50%;
+    width: 4rem;
+  }
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__header {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+}

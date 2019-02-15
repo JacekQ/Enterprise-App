@@ -1,0 +1,37 @@
+@import "src/scss/abstracts/settings.colors";
+
+.confirm-modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm-modal-title {
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+  color: $c-font-gray;
+}
+
+.confirm-modal-content {
+  padding-bottom: 40px;
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: $c-font-gray;
+}
+
+.confirm-modal-action {
+  display: flex;
+  justify-content: flex-end;
+  .action-btn:first-child {
+    margin-right: 30px;
+  }
+}

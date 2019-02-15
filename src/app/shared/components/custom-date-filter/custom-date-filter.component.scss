@@ -1,0 +1,58 @@
+form {
+    background-color: #f0f0f0;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+
+    .time-field-wrapper {
+        padding-left: 1em;
+
+        .time-field {
+            width: 100%;
+        }
+    }
+
+    .button-apply {
+        margin-top: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .date-from {
+        width: 100%;
+
+        &:not(.time-from) {
+            mat-form-field {
+                width: 100%;
+            }
+        }
+
+        &.time-from {
+            .date-field {
+                width: 50%;
+            }
+            .time-field-wrapper {
+                width: 50%;
+            }
+        }
+    }
+    .date-to {
+        width: 100%;
+
+        &:not(.time-to) {
+            mat-form-field {
+                width: 100%;
+            }
+        }
+
+        &.time-to {
+            .date-field {
+                width: 50%;
+            }
+            .time-field-wrapper {
+                width: 50%;
+            }
+        }
+    }
+
+}

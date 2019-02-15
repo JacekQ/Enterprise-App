@@ -1,0 +1,16 @@
+@import '../../../scss/abstracts/settings.colors';
+
+.logo {
+  width: 120px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+app-footer {
+  background-color: $c-grey-dark;
+  padding: 1.5rem 2rem;
+}

@@ -1,0 +1,263 @@
+{
+    "common": {
+        "language": "Język",
+        "langs": {
+            "en": "English",
+            "pl": "Polski"
+        },
+        "paginator": {
+            "items_per_page": "Ilość pozycji na stronie",
+            "first_page": "Pierwsza strona",
+            "last_page": "Ostatnia strona",
+            "next_page": "Następna strona",
+            "of_label": "z",
+            "previous_page": "Poprzednia strona"
+        },
+		"not_found": {
+			"info": "Hej! Wygląda na to, że strona jeszcze nie istnieje.",
+			"home_button": "Zabierz mnie na Start"
+		}
+    },
+    "customers": {
+        "customer": {
+            "details_tab_label": "Szczegóły",
+            "edit": "Edycja klienta: {{value}}",
+            "new": "Dodanie klienta"
+        },
+        "customers": {
+            "tab_label": "Lista Klientów",
+            "tab_label2": "Nowy klient",
+            "col_label_address": "Adres",
+            "col_label_city": "Miasto",
+            "col_label_company_name": "Nazwa firmy",
+            "col_label_email": "Email",
+            "col_label_phone": "Telefon",
+            "col_label_id": "Id klienta",
+            "col_label_country": "Kraj",
+            "col_label_createdAt": "Data założenia",
+            "empty_data_info": "Brak elementów spełniających kryteria",
+            "filters": {
+              "createdAt": {
+                  "ALL": "Wszystkie",
+                  "CUSTOM": "Zakres dat...",
+                  "MONTH": "Ostatni miesiąc",
+                  "placeholder": "Założone",
+                  "QUARTER": "Ostatni kwartał",
+                  "YEAR": "Ostatni rok"
+              },
+              "search": {
+                  "placeholder": "Szukaj"
+              },
+              "country": {
+                "ALL": "Wszystkie",
+                "placeholder": "Kraj"
+              },
+              "sort_types": {
+                "id": "Id",
+                "companyName": "Nazwa firmy",
+                "address": "Adres",
+                "city": "Miasto",
+                "country": "Kraj",
+                "email": "Email",
+                "phone": "Telefon"
+              }
+            },
+            "customers_count": "Klienci: {{value}}",
+            "delete_customer_modal": {
+              "confirm_btn": "Ok",
+              "discard_btn": "Anuluj",
+              "modal_title": "Potwierdzenie usunięcia klienta: {{customer}}",
+              "modal_content": "Czy na pewno usunąć klienta?"
+            }
+        }
+	},
+    "contacts": {
+        "contact": {
+            "details_tab_label": "Szczegóły",
+            "edit": "Edycja kontaktu: {{value}}",
+            "new": "Dodanie kontaktu"
+        },
+        "contacts": {
+            "tab_label": "Lista Kontaktów",
+            "tab_label2": "Nowy kontakt",
+            "col_label_lastName": "Nazwisko",
+            "col_label_firstName": "Imię",
+            "col_label_email": "Email",
+            "col_label_phone": "Telefon",
+            "col_label_id": "Id kontaktu",
+            "col_label_title": "Stanowisko",
+            "col_label_companyId": "Nazwa firmy",
+            "empty_data_info": "Brak elementów spełniających kryteria",
+            "filters": {
+              "search": {
+                  "placeholder": "Szukaj"
+              },
+              "company": {
+                "ALL": "Wszystkie",
+                "placeholder": "Klient"
+              },
+              "sort_types": {
+                "id": "Id",
+                "firstName": "Imię",
+                "lastName": "Nazwisko",
+                "email": "Email",
+                "phone": "Telefon",
+                "title": "Stanowisko"
+              }
+            },
+            "contacts_count": "Kontakty: {{value}}",
+            "delete_contact_modal": {
+              "confirm_btn": "Ok",
+              "discard_btn": "Anuluj",
+              "modal_title": "Potwierdzenie usunięcia kontaktu: {{contact}}",
+              "modal_content": "Czy na pewno usunąć kontakt?"
+            }
+        }
+	},
+    "users": {
+        "user": {
+            "details_tab_label": "Szczegóły",
+            "edit": "Edycja użytkownika: {{value}}",
+            "new": "Dodanie użytkownika"
+        },
+        "users": {
+            "tab_label": "Lista Użytkowników",
+            "tab_label2": "Nowy użytkownik",
+            "col_label_id": "Id użytkownika",
+            "col_label_lastName": "Nazwisko",
+            "col_label_firstName": "Imię",
+            "col_label_email": "Email",
+            "col_label_username": "Username",
+            "col_label_image": "Zdjęcie",
+            "col_label_role": "Uprawnienia",
+            "empty_data_info": "Brak elementów spełniających kryteria",
+            "filters": {
+              "search": {
+                  "placeholder": "Szukaj"
+              },
+              "company": {
+                "ALL": "Wszystkie",
+                "placeholder": "Klient"
+              },
+              "sort_types": {
+                "id": "Id",
+                "firstName": "Imię",
+                "lastName": "Nazwisko",
+                "email": "Email",
+                "username": "Username",
+                "title": "Stanowisko"
+              }
+            },
+            "users_count": "Użytkownicy: {{value}}",
+            "delete_user_modal": {
+              "confirm_btn": "Ok",
+              "discard_btn": "Anuluj",
+              "modal_title": "Potwierdzenie usunięcia użytkownika: {{user}}",
+              "modal_content": "Czy na pewno usunąć kontakt?"
+            }
+        }
+	},
+    "profile": {
+        "change_password": {
+            "tab_label": "ZMIEŃ HASŁO",
+            "title": "Zmiana hasła",
+            "old_password": "Stare hasło",
+            "new_password": "Nowe hasło",
+            "new_password_rules": "Hasło nie spełnia polityki bezpieczeństwa.",
+            "new_password_rules_help": "Reguły:<br>- Musi mieć przynajmniej 8 znaków.<br>- Musi zawierać znaki z 3 spośród 5 poniższych grup: duże litery, małe litery, cyfry, znaki specjalne, inne litery unicode.<br>- Hasło nie może zawierać nazwy użytkownika.",
+            "confirm_password": "Powtórz hasło",
+            "password_error": "Brak hasła.",
+            "change_fail": "Zmiana hasła nie powiodła się.",
+            "submit": "Zapisz",
+            "goto_profile": "Wróć do profilu",
+            "PASSWORDS_NOT_EQUAL": "Powtórzone hasło jest inne od nowego hasła.",
+            "INVALID_CURRENT_PASSWORD": "Stare hasło jest niepoprawne.",
+            "SAME_PASSWORD_AS_CURRENT": "Stare i nowe hasło powinny być różne.",
+            "TOO_SHORT": "Nowe hasło jest zbyt krótkie.",
+            "PASSWORD_CONTAINS_USERNAME": "Hasło zawiera nazwę użytkownika.",
+            "PASSWORD_TOO_WEAK": "Hasło jest zbyt proste.",
+            "ILLEGAL_CHARACTER": "Hasło zawiera niedozwolony znak.",
+            "PASSWORD_CHANGED_OK": "Hasło zostało zmienione.",
+            "MISSING_VALUE": "Przesłane dane są niekompletne."
+        }
+    },
+    "reset-password": {
+        "title": "Ustaw nowe hasło",
+        "new_password": "Nowe hasło",
+        "confirm_password": "Powtórz hasło",
+        "password-required": "Hasło wymagane",
+        "new_password-rules": "Hasło nie spełnia polityki bezpieczeństwa.",
+        "new_password-hint": "Reguły:<br> - Musi mieć przynajmniej 8 znaków.<br>- Musi zawierać znaki z 3 spośród 5 poniższych grup: duże litery, małe litery, cyfry, znaki specjalne, inne litery unicode.<br>- Hasło nie może zawierać nazwy użytkownika.",
+        "passwords_not_equal": "Powtórzone hasło jest inne od nowego hasła.",
+        "save-new-password-btn": "Zapisz nowe hasło",
+        "go-to-login-btn": "Przejdź do logowania",
+        "completed": "Hasło zostało zmienione."
+    },
+    "invalid-token": {
+        "title": "Link do ustawienia hasła jest nieaktywny",
+        "content": "Minął zbyt długi okres czasu od wygenerowania linku do ustawienia nowego hasła.<br> Proszę przejść do strony logowania aby wygenerować nowy link.",
+        "go-to-login-btn": "Przejdź do strony logowania"
+    },
+    "password-errors": {
+        "PASSWORDS_NOT_EQUAL": "Powtórzone hasło jest inne od nowego hasła.",
+        "INVALID_CURRENT_PASSWORD": "Stare hasło jest niepoprawne.",
+        "SAME_PASSWORD_AS_CURRENT": "Stare i nowe hasło powinny być różne.",
+        "TOO_SHORT": "Nowe hasło jest zbyt krótkie.",
+        "PASSWORD_CONTAINS_USERNAME": "Hasło zawiera nazwę użytkownika.",
+        "PASSWORD_TOO_WEAK": "Hasło jest zbyt proste.",
+        "ILLEGAL_CHARACTER": "Hasło zawiera niedozwolony znak.",
+        "PASSWORD_CHANGED_OK": "Hasło zostało zmienione.",
+        "MISSING_VALUE": "Przesłane dane są niekompletne.",
+        "NO_SUCH_TOKEN": "Niepoprawny token"
+    },
+    "login": {
+        "title": "Logowanie do portalu klienta",
+        "username": "email",
+        "username-hint": "wprowadź adres email.",
+        "username-error-empty": "Brak email.",
+        "username-error-invalid": "Niepoprawny email.",
+        "password": "hasło",
+        "password-hint": "wprowadź hasło.",
+        "password-error": "Brak hasła.",
+        "submit": "Zaloguj się",
+        "login_success": "Logowanie powiodło się.",
+        "login_fail": "Użytkownik o podanym adresie email nie istnieje lub podane hasło jest nieprawidłowe."
+    },
+    "menu": {
+        "customers": "Klienci",
+        "contacts": "Kontakty",
+        "dashboard": "Tablica",
+        "empty": "Portal klienta",
+        "invoices_and_payments": "Faktury i Płatności",
+        "logout": "Wyloguj",
+        "profile": "Profil Użytkownika",
+        "users": "Użytkownicy"
+    },
+    "shared": {
+        "custom_date_filter": {
+            "button_apply": "Zastosuj",
+            "date_from_placeholder": "Data od",
+            "date_to_placeholder": "Data do"
+        },
+        "filters": {
+            "mobile_filters_title": "Filtry",
+            "submit_btn": "Zastosuj"
+        },
+        "sorting": {
+            "mobile_sort_title": "Sortowanie",
+            "sort_direction_placeholder": "Kolejność",
+            "sort_directions": {
+                "asc": "Rosnąco",
+                "desc": "Malejąco"
+            },
+            "sort_option_placeholder": "Pole",
+            "submit_btn": "Zastosuj"
+        }
+    },
+    "toolbar": {
+        "buttons": {
+            "profile_aria_label": "Przycisk do otwarcia profilu użytkownika",
+            "profile_tooltip_text": "Profil użytkownika"
+        }
+    }
+}

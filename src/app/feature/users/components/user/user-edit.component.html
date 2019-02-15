@@ -1,0 +1,48 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
+
+<div *ngIf="!isLoading" class="container">
+  <mat-card class="user-card">
+    <mat-card-title *ngIf="entity.id !== 0">{{ 'users.user.edit' | translate:{ value: entity.id } }}</mat-card-title>
+    <mat-card-title *ngIf="entity.id === 0">{{ 'users.user.new' | translate }}</mat-card-title>
+    <mat-card-content>
+
+      <form novalidate (ngSubmit)="onSubmit(userForm)" [formGroup]="userForm" class="user-form">
+          <mat-form-field class="user-form__field">
+            <input matInput
+              [placeholder]="'users.users.col_label_username' | translate"
+              formControlName="username" required>
+          </mat-form-field>
+          <mat-form-field class="user-form__field user-form__field--middle">
+            <input matInput
+              [placeholder]="'users.users.col_label_firstName' | translate"
+              formControlName="firstName" required>
+          </mat-form-field>
+          <mat-form-field class="user-form__field user-form__field--middle">
+            <input matInput
+              [placeholder]="'users.users.col_label_lastName' | translate"
+              formControlName="lastName" required>
+          </mat-form-field>
+          <mat-form-field class="user-form__field">
+            <input matInput
+              [placeholder]="'users.users.col_label_email' | translate"
+              formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field class="user-form__field">
+            <input matInput
+              [placeholder]="'users.users.col_label_image' | translate"
+              formControlName="image">
+          </mat-form-field>
+          <mat-form-field class="user-form__field  user-form__field--short">
+            <mat-select [placeholder]="'users.users.col_label_role' | translate" formControlName="role" required>
+              <mat-option *ngFor="let c of roles" [value]="c.value">
+                {{ c.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button type="submit" class="btn">Zapisz</button>
+      </form>
+
+    </mat-card-content>
+    <mat-card-actions></mat-card-actions>
+  </mat-card>
+</div>

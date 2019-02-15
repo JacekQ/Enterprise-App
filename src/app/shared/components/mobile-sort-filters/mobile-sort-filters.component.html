@@ -1,0 +1,32 @@
+<div class="mobile-filters">
+  <div class="filters-header d-flex justify-content-start align-items-center">
+    <mat-icon (click)="dialogRef.close()"
+              class="header-icon">close</mat-icon>
+    <span class="header-title"
+          translate="shared.sorting.mobile_sort_title"></span>
+  </div>
+  <div class="filters-content">
+    <form [formGroup]="mobileFiltersSortForm"
+          class="d-flex flex-column filters-form"
+          (ngSubmit)="submitForm()">
+      <mat-form-field>
+        <mat-select placeholder="{{ 'shared.sorting.sort_option_placeholder' | translate }}"
+                    formControlName="sortActive">
+          <mat-option *ngFor="let opt of data?.filterOptions?.sortTypes"
+                      [value]="opt.value">{{ opt.label | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-select [placeholder]="'shared.sorting.sort_direction_placeholder' | translate"
+                    formControlName="sortDirection">
+          <mat-option *ngFor="let opt of getSortingDirections()"
+                      [value]="opt.value">{{ opt.label | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-button type="submit" 
+        class="submit-btn">{{ 'shared.sorting.submit_btn' | translate }}</button>
+    </form>
+  </div>
+</div>

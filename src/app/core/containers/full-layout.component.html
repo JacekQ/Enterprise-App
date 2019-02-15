@@ -1,0 +1,93 @@
+<mat-sidenav-container #sidenavContainer class="all-wrap" fullscreen (backdropClick)="closeSidenav()">
+
+  <mat-sidenav [opened]="showSidenav$ | async" disableClose>
+    <mat-nav-list>
+      <div class="sidenav-close-btn">
+        <button mat-icon-button (click)="closeSidenav()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <app-nav-item (navigate)="closeSidenav()" rLink="/customers" icon="list_alt">
+        {{ 'menu.customers' | translate }}
+      </app-nav-item>
+      <app-nav-item (navigate)="closeSidenav()" rLink="/contacts" icon="contacts">
+        {{ 'menu.contacts' | translate }}
+      </app-nav-item>
+      <app-nav-item *ngIf="isAdmin$ | async" (navigate)="closeSidenav()" rLink="/users" icon="supervisor_account">
+        {{ 'menu.users' | translate }}
+      </app-nav-item>
+      <app-nav-item (navigate)="logout()" icon="power_settings_new">
+        {{ 'menu.logout' | translate }}
+      </app-nav-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav #sidenavProf class="example-sidenav" position="end"
+    [fixedInViewport]="1"
+    [fixedTopGap]="65"
+    [fixedBottomGap]="100">
+    <mat-nav-list>
+      <div class="sidenav-close-btn">
+        <button mat-icon-button (click)="sidenavProf.toggle()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div matSubheader class="profile__header">Profil użytkownika</div>
+      <div class="profile__photo">
+        <img src="{{ (user$ | async).image }}" alt="{{ (user$ | async).username }}">
+      </div>
+      <mat-list-item>
+        <h4 matLine>Username</h4>
+        <p matLine>{{ (user$ | async).username }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <h4 matLine>Nazwa</h4>
+        <p matLine>{{ (user$ | async).firstName }} {{ (user$ | async).lastName }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <h4 matLine>Email</h4>
+        <p matLine>{{ (user$ | async).email }}</p>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content cdkScrollable>
+    <div class="page-wrap">
+
+      <header role="banner">
+        <mat-toolbar color="primary">
+
+          <button class="u-margin-right-small" mat-icon-button (click)="openSidenav()">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+          {{ (routeTitleKey$ | async | translate) }}
+
+          <span class="remaining-space"></span>
+
+          <button *ngFor="let link of (headerActions$ | async)" mat-button [routerLink]="link.link"
+            [matTooltip]="link.linkText"
+            [attr.aria-label]="link.linkText">
+            <mat-icon>{{ link.linkIcon }}</mat-icon> {{ link.linkText | uppercase }}
+          </button>
+
+          <button mat-icon-button
+            (click)="sidenavProf.toggle()"
+            [matTooltip]="(user$ |async).username"
+            [attr.aria-label]="(user$ |async).firstName + ' '+ (user$ |async).lastName">
+            <img src="{{ (user$ |async).image }}" class="profile__img" alt="(user$ |async).firstName + ' '+ (user$ |async).lastName">
+          </button>
+
+        </mat-toolbar>
+      </header>
+
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+
+      <app-footer></app-footer>
+
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

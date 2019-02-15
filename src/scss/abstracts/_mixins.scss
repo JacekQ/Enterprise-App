@@ -1,0 +1,69 @@
+@import 'variables';
+
+@mixin snipped-card-bg($color) {
+  background: -moz-linear-gradient(225deg, transparent 2rem, $color 2rem);
+  background: -webkit-linear-gradient(225deg, transparent 2rem, $color 2rem);
+  background: -ms-linear-gradient(225deg, transparent 2rem, $color 2rem);
+  background: -o-linear-gradient(225deg, transparent 2rem, $color 2rem);
+  background: linear-gradient(225deg, transparent 2rem, $color 2rem);
+}
+
+@mixin box-shadow($settings) {
+  -webkit-box-shadow: $settings;
+  -o-box-shadow: $settings;
+  -moz-box-shadow: $settings;
+  box-shadow: $settings;
+}
+
+@mixin border-radius($size) {
+  border-radius: $size;
+}
+
+@mixin box-border($color) {
+  border: 4px solid $color;
+}
+
+@mixin clearfix {
+  &::after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin gradientText($color1, $color2) {
+  background-image: linear-gradient(to right, #{$color1}, #{$color2});
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em) { @content };    //600px
+  }
+  @if $breakpoint == tab-port {
+      @media only screen and (max-width: 56.25em) { @content };     //900px
+  }
+  @if $breakpoint == tab-land {
+      @media only screen and (max-width: 75em) { @content };    //1200px
+  }
+  @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 112.5em) { @content };    //1800
+  }
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@mixin border-opacity($color, $width: 1px, $opacity: 0.4) {
+  border: solid $width rgba($color, $opacity);
+}

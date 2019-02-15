@@ -1,0 +1,39 @@
+:host {
+    display: block;
+
+    @media (max-width: 768.97px) {
+        margin: 0 24px;
+    }
+    
+    @media (min-width: 768.98px) {
+        margin: 0 85px;
+    }
+}
+
+.selection-panel {
+    position: absolute;
+    top: 112px;
+    right: 0;
+    left: 0;
+    width: inherit;
+    z-index: 2;
+    background: #666;
+    color: #fff;
+    
+    &.sticky {
+        position: fixed;
+        top: 0;
+    }
+
+    .selection-panel-content-wrapper {
+        margin: 0 24px;
+    }
+}
+
+@media (min-width: 768.98px) {
+    .selection-panel .selection-panel-content-wrapper {
+        margin: 0 85px;
+    }
+}
+
+

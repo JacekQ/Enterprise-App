@@ -1,0 +1,25 @@
+<section *ngIf="type === 'list'">
+  <mat-form-field>
+    <mat-select [placeholder]="'common.language' | translate"
+                [value]="(selectedLang$ | async)">
+      <mat-option *ngFor="let lang of languages"
+                  [value]="lang"
+                  [disabled]="(selectedLang$ | async) === lang"
+                  (click)="onLanguageChange(lang)">
+        {{ 'common.langs.' + lang | translate }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</section>
+
+<section *ngIf="type === 'buttons'">
+  <ul class="language-list d-flex list-unstyled m-0">
+    <li class="language"
+        *ngFor="let lang of languages"
+        [ngClass]="{'active': (selectedLang$ | async) == lang}">
+      <button class="btn btn--link language"
+              [disabled]="(selectedLang$ | async) === lang"
+              (click)="onLanguageChange(lang)">{{ 'common.langs.' + lang | translate }}</button>
+    </li>
+  </ul>
+</section>

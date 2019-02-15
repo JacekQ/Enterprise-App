@@ -1,0 +1,13 @@
+.header-icon {
+  color: $c-icon-color;
+  font-size: 24px;
+  cursor: pointer;
+
+  &:nth-child(2) {
+    margin-left: 1em;
+  }
+
+  .mat-badge-content {
+    font-size: 10px;
+  }
+}
